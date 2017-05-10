@@ -1,8 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
+<h1>Artículos del blog:</h1>
+<br>
 <% @posts.each do |articulo| %>
-  <h1><%= articulo.title %><h1>
-  <h2><%= articulo.body %></h2>
+  <h2><%= articulo.title %><h3>
+  <h3><%= articulo.body %></h3>
+  <br>
+<% end %>
+
+
+<hr />
+
+<h1>Skills</h1>
+<br>
+<h2>Lenguajes de programación:<h2>
+<br>
+<% @skills.each do |lenguaje| %>
+  <h2><%= lenguaje.title %><h2>
+  <h3>Tiempo empleado <%= lenguaje.percent_utilized %>%</h3>
+  <br>
 <% end %>
