@@ -40,4 +40,17 @@ class PortfoliosController < ApplicationController
     @portfolio_item = Portfolio.find(params[:id])
   end
 
+  def destroy
+    # Perform the lookout
+    @portfolio_item = Portfolio.find(params[:id])
+
+    # Destroy(delete) the record
+    @portfolio_item.destroy
+
+    # Redireccionar a la página
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'Se ha borrado el artículo del Portfolio.' }
+    end
+  end
+
 end
