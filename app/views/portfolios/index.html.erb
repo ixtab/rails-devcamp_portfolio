@@ -4,10 +4,10 @@
 
 <hr>
 <% @portfolio_item.sort.each do |portfolio| %>
-  <h2><%= portfolio.title %></h2>
-  <h3><%= portfolio.subtitle %></h3>
+  <h2><%= link_to portfolio.title, portfolio_path(portfolio) %></h2>  
+  <em><%= portfolio.subtitle %></em>
   <p><%= portfolio.body %></p>
   <%= image_tag portfolio.thumb_image unless portfolio.thumb_image.nil? %>
-  <p><%= link_to "Editar Portfolio", edit_portfolio_path(portfolio.id) %></p>
-<hr>
+  <p><%= link_to "Editar Portfolio", edit_portfolio_path(portfolio) %></p>
+  <hr>
 <% end %>
