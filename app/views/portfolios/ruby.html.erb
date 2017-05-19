@@ -1,0 +1,14 @@
+<h1>Ruby on Rails Portfolio Items</h1>
+
+<%= link_to "Crear nuevo artículo del Portfolio", new_portfolio_url %>
+
+<hr>
+<% @rails_portfolio_item.sort.each do |portfolio| %>
+  <h2><%= link_to portfolio.title, portfolio_show_path(portfolio) %></h2>  
+  <em><%= portfolio.subtitle %></em>
+  <p><%= portfolio.body %></p>
+  <%= image_tag portfolio.thumb_image unless portfolio.thumb_image.nil? %>
+  <p><%= link_to "Editar Portfolio", edit_portfolio_path(portfolio) %></p>
+  <p><%= link_to 'Eliminar', portfolio_path(portfolio), method: :delete, data: { confirm: '¿Seguro que quieres eliminar el artículo del portfolio?' } %></p>
+  <hr>
+<% end %>
