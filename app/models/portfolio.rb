@@ -19,7 +19,7 @@ class Portfolio < ApplicationRecord
 
   def set_defaults
     self.main_image ||= Placeholder.image_generator(height: '600', width: '400')
-    self.thumb_image ||= Placeholder.image_generator(height: '600', width: '100')
+    self.thumb_image ||= Placeholder.image_generator(height: '300', width: '200')
   end
 
 end
