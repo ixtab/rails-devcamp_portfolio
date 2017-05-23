@@ -1,20 +1,21 @@
-<h1>Artículos del blog:</h1>
+<h1>Hola <%= current_user.first_name if current_user %></h1>
+<h2>Artículos del blog:</h2>
 <br>
 <% @posts.each do |articulo| %>
-  <h2><%= articulo.title %><h3>
-  <h3><%= articulo.body %></h3>
+  <h3><%= articulo.title %><h3>
+  <h4><%= articulo.body %></h4>
   <br>
 <% end %>
 
 
 <hr />
 
-<h1>Skills</h1>
+<h2>Skills</h2>
 <br>
-<h2>Lenguajes de programación:<h2>
+<h3>Lenguajes de programación:<h3>
 <br>
 <% @skills.each do |lenguaje| %>
-  <h2><%= lenguaje.title %><h2>
-  <h3>Tiempo empleado <%= lenguaje.percent_utilized %>%</h3>
+  <h3><%= lenguaje.title %><h3>
+  <h4>Tiempo empleado <%= lenguaje.percent_utilized %>%</h4>
   <br>
 <% end %>
