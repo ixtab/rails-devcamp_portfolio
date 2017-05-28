@@ -1,15 +1,15 @@
-<h1><%= @portfolio_item.title %></h1>
+<h1><%= @portfolio_items.title %></h1>
 
-<%= image_tag @portfolio_item.main_image unless @portfolio_item.main_image.nil? %>
+<%= image_tag @portfolio_items.main_image unless @portfolio_items.main_image.nil? %>
 
 <br>
 
-<em><%= @portfolio_item.subtitle %></em>
+<em><%= @portfolio_items.subtitle %></em>
 
-<p><%= @portfolio_item.body %></p>
+<p><%= @portfolio_items.body %></p>
 
 <h2>Tecnologías usadas:</h2>
 
-<% @portfolio_item.technologies.each do |t| %>
+<% @portfolio_items.technologies.each do |t| %>
   <p><%= t.name %></p>
 <% end %>

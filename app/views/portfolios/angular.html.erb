@@ -3,7 +3,7 @@
 <%= link_to "Crear nuevo artículo del Portfolio", new_portfolio_url %>
 
 <hr>
-<% @angular_portfolio_item.sort.each do |portfolio| %>
+<% @angular_portfolio_items.sort.each do |portfolio| %>
   <h2><%= link_to portfolio.title, portfolio_show_path(portfolio) %></h2>  
   <em><%= portfolio.subtitle %></em>
   <p><%= portfolio.body %></p>
