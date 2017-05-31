@@ -4,7 +4,7 @@
 <br>
 <% @posts.each do |articulo| %>
   <h3><%= articulo.title %><h3>
-  <h4><%= articulo.body %></h4>
+  <p><%= articulo.body %></p>
   <br>
 <% end %>
 
@@ -16,7 +16,7 @@
 <br>
 <% @skills.each do |lenguaje| %>
   <h3><%= lenguaje.title %><h3>
-  <h4>Tiempo empleado <%= lenguaje.percent_utilized %>%</h4>
+  <p>Tiempo empleado <%= lenguaje.percent_utilized %>%</p>
   <br>
 <% end %>
 
