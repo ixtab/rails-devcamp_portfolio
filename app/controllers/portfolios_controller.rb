@@ -1,5 +1,7 @@
 class PortfoliosController < ApplicationController
+  before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
   layout 'portfolio'
+
   def index
     @portfolio_items = Portfolio.all
   end
@@ -30,12 +32,9 @@ class PortfoliosController < ApplicationController
   end  
 
   def edit
-    @portfolio_items = Portfolio.find(params[:id])
   end
 
   def update
-    @portfolio_items = Portfolio.find(params[:id])
-
     respond_to do |format|
       if @portfolio_items.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'Se ha modificado el artículo del Portfolio.' }
@@ -46,13 +45,9 @@ class PortfoliosController < ApplicationController
   end
 
   def show
-    @portfolio_items = Portfolio.find(params[:id])
   end
 
   def destroy
-    # Perform the lookout
-    @portfolio_items = Portfolio.find(params[:id])
-
     # Destroy(delete) the record
     @portfolio_items.destroy
 
@@ -70,6 +65,10 @@ class PortfoliosController < ApplicationController
                                       :body,
                                       technologies_attributes: [:name]
                                      )
-  end                     
+  end   
+
+  def set_portfolio_item
+    @portfolio_items = Portfolio.find(params[:id])                  
+  end                  
 
 end
