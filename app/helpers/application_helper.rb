@@ -17,4 +17,8 @@ module ApplicationHelper
      end
   end
 
+  def copyrigth_generator
+     JcctekViewTool::Renderer.copyright 'Jose Carlos Calzada - jcctek.com', "All rights reserved"   
+  end
+
 end

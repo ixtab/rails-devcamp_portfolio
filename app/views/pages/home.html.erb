@@ -3,7 +3,7 @@
 <h2>Artículos del blog:</h2>
 <br>
 <% @posts.each do |articulo| %>
-  <h3><%= articulo.title %><h3>
+  <h3><%= articulo.title %></h3>
   <p><%= articulo.body %></p>
   <br>
 <% end %>
@@ -12,10 +12,10 @@
 
 <h2>Skills</h2>
 <br>
-<h3>Lenguajes de programación:<h3>
+<h3>Lenguajes de programación:</h3>
 <br>
 <% @skills.each do |lenguaje| %>
-  <h3><%= lenguaje.title %><h3>
+  <h3><%= lenguaje.title %></h3>
   <p>Tiempo empleado <%= lenguaje.percent_utilized %>%</p>
   <br>
 <% end %>
