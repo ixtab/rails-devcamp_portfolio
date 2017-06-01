@@ -4,6 +4,6 @@
   <td><%= blog.body %></td>
   <td><%= link_to blog.status, toggle_status_blog_path(blog) %></td>        
   <td><%= link_to 'Mostrar', blog %></td>
-  <td><%= link_to 'Editar', edit_blog_path(blog) %></td>
-  <td><%= link_to 'Eliminar', blog, method: :delete, data: { confirm: '¿Seguro que quieres eliminar el post?' } %></td>
+  <td><%= link_to 'Editar', edit_blog_path(blog) if logged_in?(:site_admin) %></td>
+  <td><%= link_to 'Eliminar', blog, method: :delete, data: { confirm: '¿Seguro que quieres eliminar el post?' } if logged_in?(:site_admin)%></td>
 </tr> 

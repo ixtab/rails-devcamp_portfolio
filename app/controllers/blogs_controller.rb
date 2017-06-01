@@ -1,11 +1,12 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout "blog"
-
+  access all: [:show, :index], user:{except: [:new, :create, :destroy, :update, :edit]}, site_admin: :all
+  
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.special_blogs
+    @blogs = Blog.special_blogs.sort
     @page_title = "Mi blog del portfolio"
     @seo_keywords = @seo_keywords + " blog"
   end
@@ -14,7 +15,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @page_title = @blog.title
-    @seo_keywords = @blog.body + " Jose Carlos Calzada Portfolio Ruby on Rails ejercicio"
+    @seo_keywords = @blog.body + " Jose Carlos Calzada Portfolio Ruby on Rails ejercicio practicas blog"
   end
 
   # GET /blogs/new
