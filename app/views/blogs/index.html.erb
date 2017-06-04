@@ -1,21 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Artículos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Título</th>
-      <th>Fecha</th>
-      <th>Artículo</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="col-sm-8 blog-main">
     <%= render @blogs %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Nuevo artículo', new_blog_path if logged_in?(:site_admin)%>
+    <nav class="blog-pagination">
+      <a class="btn btn-outline-primary">Older</a>
+      <a class="btn btn-outline-secondary disabled"></a>
+    </nav>  
+</div>

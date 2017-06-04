@@ -1,14 +1,7 @@
-<p id="notice"><%= notice %></p>
+<div class="col-sm-8 blog-main">
+    
+  <h2><%= @blog.title %></h2>
+  <%= link_to 'Editar', edit_blog_path(@blog) if logged_in?(:site_admin)%>
+  <p><%= @blog.body %></p>
 
-<p>
-  <strong>Título:</strong>
-  <%= @blog.title %>
-</p>
-
-<p>
-  <strong>Artículo:</strong>
-  <%= @blog.body %>
-</p>
-
-<%= link_to 'Editar', edit_blog_path(@blog) if logged_in?(:site_admin)%> |
-<%= link_to 'Volver', blogs_path %>
+</div>
