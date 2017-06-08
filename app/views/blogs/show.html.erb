@@ -3,5 +3,5 @@
   <h2><%= @blog.title %></h2>
   <%= link_to 'Editar', edit_blog_path(@blog) if logged_in?(:site_admin)%>
   <p><%= @blog.body %></p>
-
+  <%= link_to 'Volver', blogs_path %>
 </div>
