@@ -21,6 +21,46 @@ module ApplicationHelper
      JcctekViewTool::Renderer.copyright 'Jose Carlos Calzada - jcctek.com - ', "All rights reserved"   
   end
 
+  def nav_items
+    [
+      {
+        url: root_path,
+        title: 'Inicio'
+      },
+      {
+        url: about_path,
+        title: 'Sobre Mi'
+      },
+      {
+        url: contact_path,
+        title: 'Contacto'
+      },
+      {
+        url: blogs_path,
+        title: 'Blog'
+      },
+      {
+        url: portfolios_path,
+        title: 'Portfolio'
+      }
+    ]
+  end
+
+  def nav_helper style, tag_type
+    nav_links = ""
+    nav_items.each do |item|
+      nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+    end
+
+
+    nav_links.html_safe
+  end
+
+  def active? path
+    "active" if current_page? path
+  end
+
+# distance_of_time_in_words in spanish
   def distance_of_time_in_words(from_time, to_time = 0, include_seconds = false)
      from_time = from_time.to_time if from_time.respond_to?(:to_time)
      to_time = to_time.to_time if to_time.respond_to?(:to_time)
