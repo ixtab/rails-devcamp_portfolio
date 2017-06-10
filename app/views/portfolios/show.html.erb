@@ -8,6 +8,7 @@
       <% @portfolio_items.technologies.each do |t| %>
         <p><%= t.name %></p>
       <% end %>
+      <%= link_to 'Edirar artículo', edit_portfolio_path if logged_in?(:site_admin)%>
     </div>
 
     <div class="col-md-5">
@@ -16,7 +17,7 @@
       <em><%= @portfolio_items.subtitle %></em>
       <p><%= @portfolio_items.body %></p>
       <br>
-      <%= link_to "Ver todos los artículos del portflio", portfolios_path %>
+
     </div>
 
   </div>

@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
   layout 'portfolio'
-  access all: [:show, :index, :angular], user:{except: [:new, :create, :destroy, :update, :edit]}, site_admin: :all
+  access all: [:show, :index, :angular], user: {except: [:new, :create, :destroy, :update, :edit, :sort]}, site_admin: :all
 
   def index
     @portfolio_items = Portfolio.all
@@ -33,6 +33,7 @@ class PortfoliosController < ApplicationController
   end  
 
   def edit
+    3.times { @portfolio_items.technologies.build }
   end
 
   def update
@@ -64,7 +65,9 @@ class PortfoliosController < ApplicationController
     params.require(:portfolio).permit(:title,
                                       :subtitle,
                                       :body,
-                                      technologies_attributes: [:name]
+                                      :main_image,
+                                      :thumb_image,
+                                      technologies_attributes: [:id, :name, :destroy]
                                      )
   end   
 
