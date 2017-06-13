@@ -33,7 +33,7 @@ class PortfoliosController < ApplicationController
 
     respond_to do |format|
       if @portfolio_items.save
-        format.html { redirect_to portfolios_path, notice: 'Se ha creado el objeto del Portfolio.' }
+        format.html { redirect_to portfolios_path, notice: 'Se ha creado el artículo del Portfolio.' }
       else
         format.html { render :new }
       end
