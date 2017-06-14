@@ -2,13 +2,13 @@
   <div class="row">
     
     <div class="col-md-7">
-      <%= image_tag @portfolio_items.main_image unless @portfolio_items.main_image.nil? %>
+      <%= image_tag @portfolio_items.main_image, width: '100%' %>
       <hr>
       <h3>Tecnologías usadas:</h3>
       <% @portfolio_items.technologies.each do |t| %>
         <p><%= t.name %></p>
       <% end %>
-      <%= link_to 'Edirar artículo', edit_portfolio_path if logged_in?(:site_admin)%>
+      <%= link_to 'Editar artículo', edit_portfolio_path if logged_in?(:site_admin)%>
     </div>
 
     <div class="col-md-5">

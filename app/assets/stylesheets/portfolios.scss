@@ -25,7 +25,8 @@ body {
 }
 
 .jumbotron .container {
-  max-width: 40rem;
+  max-width: 80rem;
+  min-width: 60rem;
 }
 
 .album {
@@ -67,6 +68,6 @@ footer p {
 }
 
 .portfolio-form {
-  padding: 20px 250px;
+  padding: 20px 150px;
 
 }

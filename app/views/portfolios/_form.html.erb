@@ -1,21 +1,37 @@
 <%= form_for(@portfolio_items) do |form| %>
-  <div class="form-group">
-    <%= form.label :título %>
-    <%= form.text_field :title, class: 'form-control' %>
+ 
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :título %>
+        <%= form.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :subtítulo %>
+        <%= form.text_field :subtitle, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= form.file_field :main_image %>
+      </div>
+      <div class="form-group">
+        <%= form.file_field :thumb_image %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :artículo %>
+        <%= form.text_area :body, class: 'form-control', rows: 10 %>
+      </div>
+    </div>
+
   </div>
 
-  <div class="form-group">
-    <%= form.label :subtítulo %>
-    <%= form.text_field :subtitle, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :artículo %>
-    <%= form.text_area :body, class: 'form-control', rows: 15 %>
-  </div>
   <hr>
-
-  <h2>Tecnologías</h2>
+  <h2>Tecnologías usadas:</h2>
   <div>
     <%= form.fields_for :technologies do |technology_form| %>
       <div class="form-group">
