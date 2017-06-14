@@ -2,20 +2,20 @@
   <div class="row">
     
     <div class="col-md-7">
-      <%= image_tag portfolio_img(@portfolio_item.main_image, 'main'), width: '100%' %>
+      
       <hr>
       <h3>Tecnologías usadas:</h3>
-      <% @portfolio_items.technologies.each do |t| %>
+      <% @portfolio_item.technologies.each do |t| %>
         <p><%= t.name %></p>
       <% end %>
       <%= link_to 'Editar artículo', edit_portfolio_path if logged_in?(:site_admin)%>
     </div>
 
     <div class="col-md-5">
-      <h2><%= @portfolio_items.title %></h2>
+      <h2><%= @portfolio_item.title %></h2>
       <hr>
-      <em><%= @portfolio_items.subtitle %></em>
-      <p><%= @portfolio_items.body %></p>
+      <em><%= @portfolio_item.subtitle %></em>
+      <p><%= @portfolio_item.body %></p>
       <br>
 
     </div>

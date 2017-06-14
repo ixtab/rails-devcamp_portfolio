@@ -24,15 +24,14 @@ class PortfoliosController < ApplicationController
   end
 
   def new
-    @portfolio_items = Portfolio.new
-    3.times { @portfolio_items.technologies.build }
+    @portfolio_item = Portfolio.new
   end
 
   def create
     @portfolio_items = Portfolio.new(portfolio_params)
 
     respond_to do |format|
-      if @portfolio_items.save
+      if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Se ha creado el artículo del Portfolio.' }
       else
         format.html { render :new }
@@ -41,12 +40,11 @@ class PortfoliosController < ApplicationController
   end  
 
   def edit
-    3.times { @portfolio_items.technologies.build }
   end
 
   def update
     respond_to do |format|
-      if @portfolio_items.update(portfolio_params)
+      if @portfolio_item.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'Se ha modificado el artículo del Portfolio.' }
       else
         format.html { render :edit }
@@ -59,7 +57,7 @@ class PortfoliosController < ApplicationController
 
   def destroy
     # Destroy(delete) the record
-    @portfolio_items.destroy
+    @portfolio_item.destroy
 
     # Redireccionar a la página
     respond_to do |format|
@@ -75,12 +73,12 @@ class PortfoliosController < ApplicationController
                                       :body,
                                       :main_image,
                                       :thumb_image,
-                                      technologies_attributes: [:id, :name, :destroy]
+                                      technologies_attributes: [:id, :name, :_destroy]
                                      )
   end   
 
   def set_portfolio_item
-    @portfolio_items = Portfolio.find(params[:id])                  
+    @portfolio_item = Portfolio.find(params[:id])                  
   end                  
 
 end
