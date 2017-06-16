@@ -2,7 +2,7 @@
   <div class="row">
     
     <div class="col-md-7">
-      
+      <%= image_tag @portfolio_item.main_image, width: '100%' %>
       <hr>
       <h3>Tecnologías usadas:</h3>
       <% @portfolio_item.technologies.each do |t| %>
