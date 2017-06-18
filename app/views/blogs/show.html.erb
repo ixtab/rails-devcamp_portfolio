@@ -1,20 +1,12 @@
 <div class="col-sm-8 blog-main">
     
   <h2><%= @blog.title %></h2>
+
   <%= link_to 'Editar', edit_blog_path(@blog) if logged_in?(:site_admin)%>
+  
   <p><%= @blog.body %></p>
 
-    <% unless current_user.is_a? GuestUser %>
-      
-      <%= form_for @comment, url: '#' do |f| %>
-        <div class="form-group">
-          <%= f.label :content, "Comentario:" %>
-
-          <%= f.text_area :content, rows: 5, class: 'form-control' %>
-        </div>
-          <%= f.submit 'Publicar comentario', class: 'btn btn-primary btn-lg btn-block'%>
-      <% end %>
-    <% end %>
+  <%= render 'comments/comment_form' %>
  
   <%= render @blog.comments%>
 
