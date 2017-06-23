@@ -4,15 +4,9 @@
   
   <p class="blog-post-meta">Publicado hace <%= distance_of_time_in_words(blog.created_at, Time.now) %>.</p>
   
-  <% if logged_in?(:site_admin) %>
-    <p class="blog-post-meta">
-      <%= link_to blog.status, toggle_status_blog_path(blog)%> /
- 
-      <%= link_to 'Editar', edit_blog_path(blog) %> /
-  
-      <%= link_to 'Eliminar', blog, method: :delete, data: { confirm: '¿Seguro que quieres eliminar el post?' } %>
-    </p>
-  <% end %>
+
+    <%= render partial: 'blog_action', locals: { blog: blog } if logged_in?(:site_admin)%>
+
 
   <p><%= markdown blog.body %></p>
   <p>
