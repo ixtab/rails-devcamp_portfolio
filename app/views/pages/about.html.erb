@@ -3,15 +3,108 @@
 <br>
 <div class="row">
 
-  <div class="col-md-5">
+  <div class="col-md-4">
 
     <%= image_tag "perfil2.jpg", width:300, alt: "Imagen de perfil", title: "Foto: Ⓒ Valentina Massimino"%>
   </div>  
   
-  <div class="col-md-7">
+  <div class="col-md-8">
     <p class="app-text text-left">Aunque sin abandonar nunca el tema de la programación ni el mundo de la informática, los caminos laborales me ha llevado por otros caminos distintos alejádome de este mundo a nivel laboral.</p>
 
     <p class="app-text text-left">Sin embargo durante lós últimos meses he decidido entrar en el mundo laboral dél desarrollo de aplicaciones web y para esto y de una forma autodidacta he realizado varios cursos de desarrollo web a través de distintas plataformas de aprendizaje online...</p>
+
+    <br>
+    
+    <p class="text-left">
+      <button
+        class = "btn btn-success"
+        type = "button"
+        color = black;
+        data-toggle = "collapse"
+        data-target = "#jobHistory"
+        aria-expanded = "false"
+        aria-controler ="jobHistory"
+      >
+        Experiencia Profesional
+      </button>
+
+       <button
+        class = "btn btn-success"
+        type = "button"
+        color = black;
+        data-toggle = "collapse"
+        data-target = "#education"
+        aria-expanded = "false"
+        aria-controler ="education"
+      >
+        Educación Recibida
+      </button>
+      
+       <button
+        class = "btn btn-success"
+        type = "button"
+        color = black;
+        data-toggle = "collapse"
+        data-target = "#works"
+        aria-expanded = "false"
+        aria-controler ="education"
+      >
+        Trabajos Publicados
+      </button>
+
+    </p>
+    
+    <p>
+      <div class="collapse" id="jobHistory" >
+        <div class="app-text text-left">
+          MIT - Massachusetts Institute of Technology, 1998 - 2002
+        </div>
+        <div class="app-text text-left">
+          ESA - European Space Agency, 2002 - 2009
+        </div>
+        <div class="app-text text-left">
+          CERN - Conseil Européen pour la Recherche Nucléaire, 2009 - 2015
+        </div>
+        <div class="app-text text-left">
+          SpaceX - Space Exploration Technologies Corporation, 2015 - <%= Date.today.year %>
+        </div>
+        <br>
+      </div>
+
+      <div class="collapse" id="education" >
+        <div class="app-text text-left">
+          Stanford University - Aerospace engineering, 1985 - 1989
+        </div>
+        <div class="app-text text-left">
+          MIT - Computer Science, 1989 - 1992
+        </div>
+        <div class="app-text text-left">
+          New York University - Brain and Cognitive Sciences, 1992 - 1994
+        </div>
+        <div class="app-text text-left">
+          ETH Zurich (Swiss Federal Institute of Technology)- Nuclear Engineering , 1994 - 1996
+        </div>
+        <br>
+      </div>
+
+      <div class="collapse" id="works" >
+        <div class="app-text text-left">
+          'Study of neural network implementation in complex computer systems', 1995
+        </div>
+        <div class="app-text text-left">
+          'Practical use of gravitational fields in quantum physics', 1997
+        </div>
+        <div class="app-text text-left">
+          'Use of <i>amanita muscaria</i> in shamanic rituals in the Tuva region', 1997
+        </div>
+        <div class="app-text text-left">
+          'Practical study of interlacing subatomic particles of information teleportation' , 2002
+        </div>
+        <br>
+      </div>
+
+    </p>
+
   </div>
 
 </div>
