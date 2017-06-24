@@ -4,8 +4,26 @@
 <div class="row">
 
   <div class="col-md-4">
-
     <%= image_tag "perfil2.jpg", width:300, alt: "Imagen de perfil", title: "Foto: Ⓒ Valentina Massimino"%>
+    
+    <div class="skills">
+      <% @skills.each do |skill| %>
+        <div class="skill">
+          <h5 class= "app-text text-left"><%= skill.title %>:</h5>
+          <div class="progress">
+            <div 
+            class="progress-bar progress-bar-striped bg-success"
+            role="progressbar"
+            aria-valuenow="<%= skill.percent_utilized %>"
+            aria-valuemax="100"
+            style="width: <%= skill.percent_utilized %>%"
+            >
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
   </div>  
   
   <div class="col-md-8">
@@ -95,7 +113,7 @@
           'Practical use of gravitational fields in quantum physics', 1997
         </div>
         <div class="app-text text-left">
-          'Use of <i>amanita muscaria</i> in shamanic rituals in the Tuva region', 1997
+          'Use of <i>amanita muscaria</i> in shamanic rituals in the Tuvan region', 1997
         </div>
         <div class="app-text text-left">
           'Practical study of interlacing subatomic particles of information teleportation' , 2002
