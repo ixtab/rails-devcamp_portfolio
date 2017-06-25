@@ -1,19 +1,128 @@
-<h1>Sobre mi</h1>
 
-<hr>
-
+<h1 class="app-text">Sobre mi</h1>
+<br>
 <div class="row">
 
-  <div class="col-md-5">
-    <%= image_tag "perfil2.jpg", width:300, alt: "Imagen de perfil", title: "Foto: Ⓒ Valentina Massimino"%>
+  <div class="col-md-4">
+    <%= image_tag "astronaut.jpg", width:300, alt: "Imagen de perfil" %>
+    
+    <div class="skills">
+      <% @skills.each do |skill| %>
+        <div class="skill">
+          <h5 class= "app-text text-left"><%= skill.title %>:</h5>
+          <div class="progress">
+            <div 
+            class="progress-bar progress-bar-striped bg-success"
+            role="progressbar"
+            aria-valuenow="<%= skill.percent_utilized %>"
+            aria-valuemax="100"
+            style="width: <%= skill.percent_utilized %>%"
+            >
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
   </div>  
   
-  <div class="col-md-7">
-    <p class="app-text">Aunque sin abandonar nunca el tema de la programación ni el mundo de la informática, los caminos laborales me ha llevado por otros caminos distintos alejádome de este mundo a nivel laboral.</p>
+  <div class="col-md-8">
+    <p class="app-text text-left">En esta página aparecerá la parte relativa tanto a la experiencia laboral como a los diversos cursos que se hayan realizado. Con respecto a los trabajos realizados está la parte de 'portfolio' y aquí no aparecerían aunque también se podrían enlazar desde aquí.</p>
 
-    <p class="app-text">Sin embargo durante lós últimos meses he decidido entrar en el mundo laboral dél desarrollo de aplicaciones web y para esto y de una forma autodidacta he realizado varios cursos de desarrollo web a través de distintas plataformas de aprendizaje online...</p>
+    <p class="app-text text-left">El perfil que aparece no es real y solo está puesto con fines educativos.</p>
+
+    <br>
+    
+    <p class="text-left">
+      <button
+        class = "btn btn-success"
+        type = "button"
+        color = black;
+        data-toggle = "collapse"
+        data-target = "#jobHistory"
+        aria-expanded = "false"
+        aria-controler ="jobHistory"
+      >
+        Experiencia Profesional
+      </button>
+
+       <button
+        class = "btn btn-success"
+        type = "button"
+        color = black;
+        data-toggle = "collapse"
+        data-target = "#education"
+        aria-expanded = "false"
+        aria-controler ="education"
+      >
+        Educación Recibida
+      </button>
+      
+       <button
+        class = "btn btn-success"
+        type = "button"
+        color = black;
+        data-toggle = "collapse"
+        data-target = "#works"
+        aria-expanded = "false"
+        aria-controler ="education"
+      >
+        Trabajos Publicados
+      </button>
+
+    </p>
+    
+    <p>
+      <div class="collapse" id="jobHistory" >
+        <div class="app-text text-left">
+          MIT - Massachusetts Institute of Technology, 1998 - 2002
+        </div>
+        <div class="app-text text-left">
+          ESA - European Space Agency, 2002 - 2009
+        </div>
+        <div class="app-text text-left">
+          CERN - Conseil Européen pour la Recherche Nucléaire, 2009 - 2015
+        </div>
+        <div class="app-text text-left">
+          SpaceX - Space Exploration Technologies Corporation, 2015 - <%= Date.today.year %>
+        </div>
+        <br>
+      </div>
+
+      <div class="collapse" id="education" >
+        <div class="app-text text-left">
+          Stanford University - Aerospace engineering, 1985 - 1989
+        </div>
+        <div class="app-text text-left">
+          MIT - Computer Science, 1989 - 1992
+        </div>
+        <div class="app-text text-left">
+          New York University - Brain and Cognitive Sciences, 1992 - 1994
+        </div>
+        <div class="app-text text-left">
+          ETH Zurich (Swiss Federal Institute of Technology)- Nuclear Engineering , 1994 - 1996
+        </div>
+        <br>
+      </div>
+
+      <div class="collapse" id="works" >
+        <div class="app-text text-left">
+          'Study of neural network implementation in complex computer systems', 1995
+        </div>
+        <div class="app-text text-left">
+          'Practical use of gravitational fields in quantum physics', 1997
+        </div>
+        <div class="app-text text-left">
+          'Use of <i>amanita muscaria</i> in shamanic rituals in the Tuvan region', 1997
+        </div>
+        <div class="app-text text-left">
+          'Practical study of interlacing subatomic particles of information teleportation' , 2002
+        </div>
+        <br>
+      </div>
+
+    </p>
+
   </div>
 
 </div>
-
-

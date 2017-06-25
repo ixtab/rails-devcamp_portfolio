@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Philosopher', sans-serif;
   color: #555;
 }
 
@@ -22,7 +22,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Philosopher', sans-serif;
   font-weight: normal;
   color: #333;
 }
@@ -190,4 +190,12 @@ h6, .h6 {
 
 .comment-name{
   font-weight: 700;
+}
+
+.blog-crumb a{
+  font-size: 1.5em;
+  padding: 0 10px;
+}
+.blog-nav {
+  margin-bottom: 30px;
 }

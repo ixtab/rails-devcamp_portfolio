@@ -1,11 +1,7 @@
 @import "bootstrap";
 @import "gritter";
 
-/*
- * Globals
- */
 
-/* Links */
 a,
 a:focus,
 a:hover {
@@ -17,7 +13,7 @@ a:hover {
 .btn-secondary:hover,
 .btn-secondary:focus {
   color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
+  text-shadow: none; 
   background-color: #fff;
   border: .05rem solid #fff;
 }
@@ -35,6 +31,7 @@ body {
   color: #fff;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  font-family: 'Aldrich', sans-serif;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -149,7 +146,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    width: 100%; 
   }
 }
 
@@ -215,4 +212,17 @@ body {
 
 .tech-news > .card {
   padding: 1px;
+}
+
+.text-left {
+  text-align: left;
+}
+.btn-success{
+  color: black;
+  background-color: #A2FF14;
+  margin-right: 20px;
+}
+
+.skill{
+  margin: 10px 0;
 }
