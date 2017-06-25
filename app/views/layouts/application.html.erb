@@ -8,7 +8,7 @@
     <%= csrf_meta_tags %>
   
 
-    
+    <%= favicon_link_tag 'https://s3-eu-west-1.amazonaws.com/devcamp-portfolio-jcc/uploads/portfolio/main_image/favicon4.ico' %>
     <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -22,12 +22,12 @@
         <div class="cover-container">
 
           <%= video_tag(
-              'Ethernet.mp4',
+              'https://s3-eu-west-1.amazonaws.com/devcamp-portfolio-jcc/uploads/portfolio/main_image/Ethernet.mp4',
               id: 'background',
               autoplay: true,
               loop: true,
               muted: true,
-              poster: 'bkg.png',
+              poster: 'https://s3-eu-west-1.amazonaws.com/devcamp-portfolio-jcc/uploads/portfolio/main_image/bkg.png',
               ) 
           %>
 
