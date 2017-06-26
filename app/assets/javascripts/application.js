@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require rails-ujs
+//= require jquery-ui
 //= require turbolinks
 //= require cable
-//= require jquery-ui
 //= require html.sortable
 //= require_tree .
 //= require cocoon
